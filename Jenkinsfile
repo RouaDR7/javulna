@@ -22,6 +22,12 @@ pipeline { // Defines a pipeline
         sh 'mvn clean install' // Runs the Maven command to clean and build the project
       }   
     }
+    stage ('docker build') { // Defines the 'docker build' stage
+      steps { // Specifies the steps to be executed within this stage
+        sh 'docker build -t javulna-0.1 .' // Builds a Docker image with the specified tag
+      }   
+    }
+    
  }
 }
  
